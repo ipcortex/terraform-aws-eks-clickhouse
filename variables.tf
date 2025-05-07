@@ -127,7 +127,7 @@ variable "eks_tags" {
 variable "eks_cidr" {
   description = "CIDR block"
   type        = string
-  default     = "10.0.0.0/16"
+  default     = "172.31.0.0/16"
 }
 
 variable "eks_node_pools" {
@@ -193,9 +193,9 @@ variable "eks_private_cidr" {
   description = "List of private CIDR. When set, the number of private CIDRs must match the number of availability zones"
   type        = list(string)
   default = [
-    "10.0.1.0/24",
-    "10.0.2.0/24",
-    "10.0.3.0/24"
+    "172.31.0.1.0/24",
+    "172.31.2.0/24",
+    "172.31.3.0/24"
   ]
 }
 
@@ -203,9 +203,9 @@ variable "eks_public_cidr" {
   description = "List of public CIDR. When set, The number of public CIDRs must match the number of availability zones"
   type        = list(string)
   default = [
-    "10.0.101.0/24",
-    "10.0.102.0/24",
-    "10.0.103.0/24"
+    "172.31.101.0/24",
+    "172.31.102.0/24",
+    "172.31.103.0/24"
   ]
 }
 
