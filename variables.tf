@@ -85,7 +85,7 @@ variable "clickhouse_keeper_chart_version" {
 variable "eks_region" {
   description = "The AWS region"
   type        = string
-  default     = "us-east-1"
+  default     = "eu-west-2"
 }
 
 variable "eks_cluster_name" {
@@ -154,23 +154,23 @@ variable "eks_node_pools" {
   default = [
     {
       name          = "clickhouse"
-      instance_type = "m6i.large"
-      ami_type      = "AL2_x86_64"
+      instance_type = "t4g.medium"
+      ami_type      = "AL2_ARM_64"
       desired_size  = 0
       disk_size     = 20
       max_size      = 10
       min_size      = 0
-      zones         = ["us-east-1a", "us-east-1b", "us-east-1c"]
+      zones         = ["eu-west-2a", "eu-west-2b", "eu-west-2c"]
     },
     {
       name          = "system"
-      instance_type = "t3.large"
-      ami_type      = "AL2_x86_64"
+      instance_type = "t4g.medium"
+      ami_type      = "AL2_ARM_64"
       disk_size     = 20
       desired_size  = 1
       max_size      = 10
       min_size      = 0
-      zones         = ["us-east-1a"]
+      zones         = ["eu-west-2a"]
     }
   ]
 
@@ -213,9 +213,9 @@ variable "eks_availability_zones" {
   description = ""
   type        = list(string)
   default = [
-    "us-east-1a",
-    "us-east-1b",
-    "us-east-1c"
+    "eu-west-2a",
+    "eu-west-2b",
+    "eu-west-2c"
   ]
 }
 

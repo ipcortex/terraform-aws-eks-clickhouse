@@ -4,7 +4,7 @@
 variable "region" {
   description = "The AWS region"
   type        = string
-  default     = "us-east-1"
+  default     = "eu-west-2"
 }
 
 variable "tags" {
@@ -46,9 +46,9 @@ variable "availability_zones" {
   description = "List of AWS availability zones"
   type        = list(string)
   default = [
-    "us-east-1",
-    "us-east-2",
-    "us-east-3"
+    "eu-west-1",
+    "eu-west-2",
+    "eu-west-3"
   ]
 }
 
@@ -109,23 +109,23 @@ variable "node_pools" {
   default = [
     {
       name          = "clickhouse"
-      instance_type = "m6i.large"
-      ami_type      = "AL2_x86_64"
+      instance_type = "t4g.medium"
+      ami_type      = "AL2_ARM_64"
       desired_size  = 0
       max_size      = 10
       min_size      = 0
       disk_size     = 20
-      zones         = ["us-east-1a", "us-east-1b", "us-east-1c"]
+      zones         = ["eu-west-2a", "eu-west-2b", "eu-west-2c"]
     },
     {
       name          = "system"
-      instance_type = "t3.large"
-      ami_type      = "AL2_x86_64"
+      instance_type = "t4g.medium"
+      ami_type      = "AL2_ARM_64"
       desired_size  = 1
       max_size      = 10
       min_size      = 0
       disk_size     = 20
-      zones         = ["us-east-1a", "us-east-1b", "us-east-1c"]
+      zones         = ["eu-west-2a", "eu-west-2b", "eu-west-2c"]
     }
   ]
 
